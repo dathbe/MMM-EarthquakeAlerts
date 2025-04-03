@@ -33,7 +33,8 @@ To use this module, add it to the modules array in your `~/MagicMirror/config/co
   module: 'MMM-EarthquakeAlerts',
   position: 'top_bar',
   config: {
-    animationSpeed: 1000 * 2
+    latitude: 39.1,
+    longitude: 94.6,
   }
 }
 ````
@@ -44,7 +45,9 @@ The following properties can be configured:
 
 | Option                | Description
 |-----------------------|------------
-|`animationSpeed`	|*Optional* The speed of animated transitions from one message to another in milliseconds<br>**Type:** `int`<br>**Default:** `2000` (2 seconds)
+|`latitude`       |Technically *optional*, but not very useful without putting in the latitude of the location you are interested in getting alerts on.<br>**Type:** `float`<br>**Default:** `94.6`
+|`longitude`      |Technically *optional*, but not very useful without putting in the longitude of the location you are interested in getting alerts on.<br>**Type:** `float`<br>**Default:** `94.6`
+|`animationSpeed` |*Optional* The speed of animated transitions from one message to another in milliseconds<br>**Type:** `int`<br>**Default:** `2000` (2 seconds)
 
 ## Contributing
 
