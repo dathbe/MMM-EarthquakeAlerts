@@ -1,22 +1,20 @@
 {
-  "name": "mmm-customtext",
-  "version": "1.0.1",
-  "description": "A MagicMirror² module to display a custom message on your mirror, updatable via notification.",
+  "name": "mmm-earthquakealerts",
+  "version": "1.0.0",
+  "description": "A MagicMirror² module to display alerts for earthquakes near a chosen location.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dathbe/MMM-CustomText.git"
+    "url": "git+https://github.com/dathbe/MMM-EarthquakeAlerts.git"
   },
   "keywords": [
     "MagicMirror",
     "MagicMirror²",
-    "Custom",
-    "Text",
-    "Message"
+    "Earthquakes",
+    "News"
   ],
   "author": "dathbe",
   "contributors": [
-    "dathbe",
-    "KristjanESPERANTO"
+    "dathbe"
   ],
   "scripts": {
     "lint": "eslint",
@@ -24,6 +22,10 @@
     "test": "npm run lint"
   },
   "license": "MIT",
+  "dependencies": {
+    "moment-timezone": "^0.5.48",
+    "geolib": "^3.3.4"
+  },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
     "@stylistic/eslint-plugin": "^4.2.0",
