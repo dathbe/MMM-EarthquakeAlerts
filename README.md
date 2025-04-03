@@ -23,11 +23,9 @@ cd ~/MagicMirror/modules/MMM-EarthquakeAlerts
 npm install
 ```
 
-No dependencies need to be installed, **but** you likely want [MMM-Remote-Control](https://github.com/Jopyth/MMM-Remote-Control) installed to allow posting of messages via API.
-
 ## Updating
 
-```sh
+```bash
 cd ~/MagicMirror/modules/MMM-EarthquakeAlerts
 git pull
 npm install
