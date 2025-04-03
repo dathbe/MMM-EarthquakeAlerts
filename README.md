@@ -11,6 +11,8 @@ Suggestions are welcome.
 ```bash
 cd ~/MagicMirror/modules
 git clone https://github.com/dathbe/MMM-EarthquakeAlerts
+cd ~/MagicMirror/modules/MMM-EarthquakeAlerts
+npm install
 ```
 
 No dependencies need to be installed, **but** you likely want [MMM-Remote-Control](https://github.com/Jopyth/MMM-Remote-Control) installed to allow posting of messages via API.
@@ -20,6 +22,7 @@ No dependencies need to be installed, **but** you likely want [MMM-Remote-Contro
 ```sh
 cd ~/MagicMirror/modules/MMM-EarthquakeAlerts
 git pull
+npm install
 ```
 
 ## Usage
