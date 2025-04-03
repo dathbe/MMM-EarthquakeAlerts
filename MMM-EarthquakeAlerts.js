@@ -14,7 +14,7 @@ Module.register('MMM-EarthquakeAlerts', {
     ],
     updateInterval: 15 * 60, // 15 minutes
     magnitude1: 2.5,
-    distance1: 2000 * 1609,
+    distance1: 10 * 1609,
     magnitude2: 4.0,
     distance2: 60 * 1609,
     magnitude3: 5.5,
