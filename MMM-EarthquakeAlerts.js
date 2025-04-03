@@ -46,7 +46,7 @@ Module.register('MMM-EarthquakeAlerts', {
 
     var self = this
     setInterval(function () {
-      console.log('Sending notification now')
+      //console.log('Sending notification now')
       self.sendSocketNotification('EARTHQUAKE_REQUEST', self.config)
     }, nextLoad)
   },
@@ -67,7 +67,7 @@ Module.register('MMM-EarthquakeAlerts', {
   // Deal with received notification
   socketNotificationReceived(notification, payload) {
     if (notification === 'EARTHQUAKE_ALERT') {
-      console.log('Earthquake message received!')
+      //console.log('Earthquake message received!')
       if (payload.quakeMessages.length > 0) {
         this.messageText = payload.quakeMessages.join('<br>')
       }
