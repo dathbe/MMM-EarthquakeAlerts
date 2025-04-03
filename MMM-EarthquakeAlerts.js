@@ -1,22 +1,22 @@
 /* MagicMirror²
- * Module: MMM-CustomText
+ * Module: MMM-EarthquakeAlerts
  *
  * By dathbe
  * MIT Licensed.
  */
 
-Module.register('MMM-CustomText', {
+Module.register('MMM-EarthquakeAlerts', {
 
   // Default config.
   defaults: {
+    latitude: 39.1,
+    longitude: 94.6,
     animationSpeed: 2 * 1000,
-    uniqueID: null,
-    initialMessage: 'No notification received yet',
   },
 
   // Define required scripts.
   getStyles() {
-    return ['MMM-CustomText.css']
+    return ['MMM-EarthquakeAlerts.css']
   },
 
   // Define start sequence.
@@ -30,7 +30,7 @@ Module.register('MMM-CustomText', {
     const self = this
     // create html
     const wrapper = document.createElement('div')
-    wrapper.className = 'CustomTextDiv'
+    wrapper.className = 'EarthquakeAlertsDiv'
     wrapper.innerHTML = self.messageText
     if (self.messageText == '') {
       wrapper.style.display = 'none'
@@ -39,7 +39,7 @@ Module.register('MMM-CustomText', {
   },
 
   notificationReceived(notification, payload, sender) {
-    if (notification === 'CUSTOMTEXT_UPDATE' && (payload.uniqueID == this.config.uniqueID || !this.config.uniqueID)) {
+    if (notification === 'EARTHQUAKEALERTS_UPDATE' && (payload.uniqueID == this.config.uniqueID || !this.config.uniqueID)) {
       Log.debug(`Received notification: ${notification} with payload.message: ${payload.message} from sender: ${sender}`)
       this.messageText = payload.message
       this.notification = true
