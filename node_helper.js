@@ -1,6 +1,5 @@
 const NodeHelper = require('node_helper')
 const moment = require('moment-timezone')
-// const pd = require('node-pandas')
 const geolib = require('geolib')
 
 module.exports = NodeHelper.create({
@@ -12,7 +11,6 @@ module.exports = NodeHelper.create({
     // Fetch earthquake data for the last day (with at least magnitude1 magnitude)
     try {
       const url = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=' + moment().subtract(1, 'day').format() + '&minmagnitude=' + payload.magnitude1
-      console.log(url)
       const response = await fetch(url)
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
