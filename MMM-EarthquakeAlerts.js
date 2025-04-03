@@ -10,16 +10,18 @@ Module.register('MMM-EarthquakeAlerts', {
   // Default config.
   defaults: {
     locations: [
-      { latitude: 39.1, longitude: -94.6, name: 'nowhere' },
+      { latitude: 39.1, longitude: -94.6, name: 'nowhere specific' },
     ],
+    updateInterval: 15 * 60, // 15 minutes
     magnitude1: 2.5,
-    distance1: 10 * 1609,
+    distance1: 2000 * 1609,
     magnitude2: 4.0,
     distance2: 60 * 1609,
     magnitude3: 5.5,
     distance3: 300 * 1609,
     magnitude4: 7.0,
-    animationSpeed: 2 * 1000,
+    animationSpeed: 2 * 1000, // 2 seconds
+    metric: false,
   },
 
   // Define required scripts.
@@ -29,10 +31,24 @@ Module.register('MMM-EarthquakeAlerts', {
 
   // Define start sequence.
   start() {
-    this.notification = false
     this.messageText = ''
 
     this.sendSocketNotification('EARTHQUAKE_REQUEST', this.config)
+    
+    this.scheduleUpdate()
+  },
+
+  scheduleUpdate: function (delay) {
+    var nextLoad = this.config.updateInterval * 1000
+    if (typeof delay !== 'undefined' && delay >= 0) {
+      nextLoad = delay
+    }
+
+    var self = this
+    setInterval(function () {
+      console.log("Sending notification now")
+      self.sendSocketNotification('EARTHQUAKE_REQUEST', self.config)
+    }, nextLoad)
   },
 
   // dom generator.
@@ -51,8 +67,13 @@ Module.register('MMM-EarthquakeAlerts', {
   // Deal with received notification
   socketNotificationReceived(notification, payload) {
     if (notification === 'EARTHQUAKE_ALERT') {
-      this.messageText = payload.quakeMessages.join('<br>')
-      this.notification = true
+      console.log("Earthquake message received!")
+      if (payload.quakeMessages.length > 0) {
+        this.messageText = payload.quakeMessages.join('<br>')
+      }
+      else {
+        this.messageText = ''
+      }
       this.updateDom(this.config.animationSpeed)
     }
   },

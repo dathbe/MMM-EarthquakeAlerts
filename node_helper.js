@@ -14,6 +14,7 @@ module.exports = NodeHelper.create({
     var data = []
     try {
       const url = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=' + moment().subtract(1, 'day').format() + '&minmagnitude=' + payload.magnitude1
+      console.log(url)
       const response = await fetch(url)
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
@@ -24,28 +25,37 @@ module.exports = NodeHelper.create({
       // Parse quake information
       var quakeMessages = []
       for (var quakeNo in quakes) {
+        var closeTo = -1
         var distances = []
         for (var locNo in payload.locations) {
-          distances.push(
-            geolib.getPreciseDistance(
+          var currDistance = geolib.getPreciseDistance(
               { latitude: payload.locations[locNo]['latitude'], longitude: payload.locations[locNo]['longitude'] },
               { latitude: quakes[quakeNo]['geometry']['coordinates'][1], longitude: quakes[quakeNo]['geometry']['coordinates'][0] },
-            ),
-          )
+            )
+          distances.push(currDistance)
+          if (((currDistance <= payload.distance1 && quakes[quakeNo]['properties']['mag'] >= payload.magnitude1) ||
+             (currDistance <= payload.distance2 && quakes[quakeNo]['properties']['mag'] >= payload.magnitude2) ||
+             (currDistance <= payload.distance3 && quakes[quakeNo]['properties']['mag'] >= payload.magnitude3) ||
+             (quakes[quakeNo]['properties']['mag'] >= payload.magnitude4)) &&
+             closeTo < 0 ) {
+            closeTo = locNo
+          }
         }
-        var hoursAgo = (new Date() - quakes[quakeNo]['properties']['time']) / 1000 / 60 / 60
-        // if ((Math.min(distances) <= payload.distance1 && quake['properties']['mag'] >= payload.magnitude1)
-        //  || (Math.min(distances) <= payload.distance2 && quake['properties']['mag'] >= payload.magnitude2)
-        //  || (quake['properties']['mag'] >= payload.magnitude3)) {
-          quakeMessages.push(`${parseFloat(quakes[quakeNo]['properties']['mag']).toFixed(1)} earthquake ${Math.round(Math.min(...distances) / 1609)} miles from ${payload.locations[distances.indexOf(Math.min(...distances))]['name']} near ${quakes[quakeNo]['properties']['place'].split('of ')[1]} ${Math.floor(hoursAgo)} hours ago`)
-        // }
+        if (closeTo >= 0) {
+          if (payload.metric) {
+            var messageDistance = `${Math.round(distances[closeTo] / 1000)} km`
+          }
+          else {
+            messageDistance = `${Math.round(distances[closeTo] / 1609)} miles`
+          }
+          var hoursAgo = Math.floor((new Date() - quakes[quakeNo]['properties']['time']) / 1000 / 60 / 60)
+          quakeMessages.push(`${parseFloat(quakes[quakeNo]['properties']['mag']).toFixed(1)} earthquake ${messageDistance} from ${payload.locations[closeTo]['name']} near ${quakes[quakeNo]['properties']['place'].split('of ')[quakes[quakeNo]['properties']['place'].split('of ').length - 1]} ${hoursAgo} hours ago`)
+        }
       }
       // Send message
-      if (quakeMessages.length > 0) {
-        this.sendSocketNotification('EARTHQUAKE_ALERT', {
-          quakeMessages: quakeMessages,
-        })
-      }
+      this.sendSocketNotification('EARTHQUAKE_ALERT', {
+        quakeMessages: quakeMessages,
+      })
     }
     catch (error) {
       console.error('[MMM-EarthquakeAlerts] Could not load data.', error)
