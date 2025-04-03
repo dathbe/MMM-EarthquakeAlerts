@@ -1,12 +1,12 @@
-.MMM-CustomText {
+.MMM-EarthquakeAlerts {
 	margin: 0;
 }
 
-.MMM-CustomText .CustomTextDiv {
+.MMM-EarthquakeAlerts .EarthquakeAlertsDiv {
 	margin-bottom: var(--gap-modules);
 }
 
-.region.bottom .MMM-CustomText .CustomTextDiv {
+.region.bottom .MMM-EarthquakeAlerts .EarthquakeAlertsDiv {
 	margin-top: var(--gap-modules);
 	margin-bottom: 0;
 }
