@@ -9,9 +9,7 @@ module.exports = NodeHelper.create({
   },
 
   async getData(payload) {
-
     // Fetch earthquake data for the last day (with at least magnitude1 magnitude)
-    var data = []
     try {
       const url = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=' + moment().subtract(1, 'day').format() + '&minmagnitude=' + payload.magnitude1
       console.log(url)
@@ -29,15 +27,15 @@ module.exports = NodeHelper.create({
         var distances = []
         for (var locNo in payload.locations) {
           var currDistance = geolib.getPreciseDistance(
-              { latitude: payload.locations[locNo]['latitude'], longitude: payload.locations[locNo]['longitude'] },
-              { latitude: quakes[quakeNo]['geometry']['coordinates'][1], longitude: quakes[quakeNo]['geometry']['coordinates'][0] },
-            )
+            { latitude: payload.locations[locNo]['latitude'], longitude: payload.locations[locNo]['longitude'] },
+            { latitude: quakes[quakeNo]['geometry']['coordinates'][1], longitude: quakes[quakeNo]['geometry']['coordinates'][0] },
+          )
           distances.push(currDistance)
-          if (((currDistance <= payload.distance1 && quakes[quakeNo]['properties']['mag'] >= payload.magnitude1) ||
-             (currDistance <= payload.distance2 && quakes[quakeNo]['properties']['mag'] >= payload.magnitude2) ||
-             (currDistance <= payload.distance3 && quakes[quakeNo]['properties']['mag'] >= payload.magnitude3) ||
-             (quakes[quakeNo]['properties']['mag'] >= payload.magnitude4)) &&
-             closeTo < 0 ) {
+          if (((currDistance <= payload.distance1 && quakes[quakeNo]['properties']['mag'] >= payload.magnitude1)
+            || (currDistance <= payload.distance2 && quakes[quakeNo]['properties']['mag'] >= payload.magnitude2)
+            || (currDistance <= payload.distance3 && quakes[quakeNo]['properties']['mag'] >= payload.magnitude3)
+            || (quakes[quakeNo]['properties']['mag'] >= payload.magnitude4))
+          && closeTo < 0) {
             closeTo = locNo
           }
         }

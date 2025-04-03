@@ -34,7 +34,7 @@ Module.register('MMM-EarthquakeAlerts', {
     this.messageText = ''
 
     this.sendSocketNotification('EARTHQUAKE_REQUEST', this.config)
-    
+
     this.scheduleUpdate()
   },
 
@@ -46,7 +46,7 @@ Module.register('MMM-EarthquakeAlerts', {
 
     var self = this
     setInterval(function () {
-      console.log("Sending notification now")
+      console.log('Sending notification now')
       self.sendSocketNotification('EARTHQUAKE_REQUEST', self.config)
     }, nextLoad)
   },
@@ -67,7 +67,7 @@ Module.register('MMM-EarthquakeAlerts', {
   // Deal with received notification
   socketNotificationReceived(notification, payload) {
     if (notification === 'EARTHQUAKE_ALERT') {
-      console.log("Earthquake message received!")
+      console.log('Earthquake message received!')
       if (payload.quakeMessages.length > 0) {
         this.messageText = payload.quakeMessages.join('<br>')
       }
@@ -78,7 +78,7 @@ Module.register('MMM-EarthquakeAlerts', {
     }
   },
 
-// NOW NEED TO HAVE IT REFRESH THE FEED PERIODICALLY
-  //Maybe set it so that it will display location 1 if loc1 hits any of the criteria, then 2, then 3 (with a boolean on whether any given thing hits?)
+  // NOW NEED TO HAVE IT REFRESH THE FEED PERIODICALLY
+  // Maybe set it so that it will display location 1 if loc1 hits any of the criteria, then 2, then 3 (with a boolean on whether any given thing hits?)
 
 })
