@@ -10,3 +10,8 @@
 	margin-top: var(--gap-modules);
 	margin-bottom: 0;
 }
+
+/*
+prefix = "<div style='width:100%; background-color:#f19b52; border-radius: 7px;; padding: 10px; box-sizing: border-box;'>" 
+suffix = "</div>"
+*/
