@@ -45,7 +45,7 @@ The following properties can be configured:
 
 | Option                | Description
 |-----------------------|------------
-|`latitude`       |Technically *optional*, but not very useful without putting in the latitude of the location you are interested in getting alerts on.<br>**Type:** `float`<br>**Default:** `94.6`
+|`latitude`       |Technically *optional*, but not very useful without putting in the latitude of the location you are interested in getting alerts on.<br>**Type:** `float`<br>**Default:** `39.1`
 |`longitude`      |Technically *optional*, but not very useful without putting in the longitude of the location you are interested in getting alerts on.<br>**Type:** `float`<br>**Default:** `94.6`
 |`animationSpeed` |*Optional* The speed of animated transitions from one message to another in milliseconds<br>**Type:** `int`<br>**Default:** `2000` (2 seconds)
 
