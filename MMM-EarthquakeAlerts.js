@@ -12,7 +12,7 @@ Module.register('MMM-EarthquakeAlerts', {
     locations: [
       { latitude: 39.1, longitude: -94.6, name: 'nowhere specific' },
     ],
-    updateInterval: 15 * 60, // 15 minutes
+    updateInterval: 30 * 60, // 30 minutes
     magnitude1: 2.5,
     distance1: 10 * 1609,
     magnitude2: 4.0,
