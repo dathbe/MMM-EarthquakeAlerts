@@ -58,5 +58,6 @@ Module.register('MMM-EarthquakeAlerts', {
   },
 
 // NOW NEED TO HAVE IT REFRESH THE FEED PERIODICALLY
+  //Maybe set it so that it will display location 1 if loc1 hits any of the criteria, then 2, then 3 (with a boolean on whether any given thing hits?)
 
 })
