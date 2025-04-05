@@ -38,7 +38,7 @@ module.exports = NodeHelper.create({
           }
         }
         if (closeTo >= 0) {
-          if (payload.metric) {
+          if (config.units === 'metric') {
             var messageDistance = `${Math.round(distances[closeTo] / 1000)} km`
           }
           else {
