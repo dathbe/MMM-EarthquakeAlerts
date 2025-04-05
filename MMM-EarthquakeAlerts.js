@@ -21,7 +21,6 @@ Module.register('MMM-EarthquakeAlerts', {
     distance3: 300 * 1609,
     magnitude4: 7.0,
     animationSpeed: 2 * 1000, // 2 seconds
-    metric: false,
   },
 
   // Define required scripts.
