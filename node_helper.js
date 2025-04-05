@@ -1,10 +1,11 @@
+const Log = require('logger')
 const NodeHelper = require('node_helper')
 const moment = require('moment-timezone')
 const geolib = require('geolib')
 
 module.exports = NodeHelper.create({
   start: function () {
-    console.log('Starting node_helper for: ' + this.name)
+    Log.log('Starting node_helper for: ' + this.name)
   },
 
   async getData(payload) {
@@ -54,7 +55,7 @@ module.exports = NodeHelper.create({
       })
     }
     catch (error) {
-      console.error('[MMM-EarthquakeAlerts] Could not load data.', error)
+      Log.error('[MMM-EarthquakeAlerts] Could not load data.')
     }
   },
 
