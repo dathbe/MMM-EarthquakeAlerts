@@ -55,7 +55,7 @@ module.exports = NodeHelper.create({
       })
     }
     catch (error) {
-      Log.error('[MMM-EarthquakeAlerts] Could not load data.')
+      Log.error('[MMM-EarthquakeAlerts] Could not load data.', error)
     }
   },
 
