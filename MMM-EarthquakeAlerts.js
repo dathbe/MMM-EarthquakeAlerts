@@ -21,7 +21,6 @@ Module.register('MMM-EarthquakeAlerts', {
     distance3: 300 * 1609,
     magnitude4: 7.0,
     animationSpeed: 2 * 1000, // 2 seconds
-    metric: false,
   },
 
   // Define required scripts.
@@ -46,7 +45,7 @@ Module.register('MMM-EarthquakeAlerts', {
 
     var self = this
     setInterval(function () {
-      //console.log('Sending notification now')
+      // console.log('Sending notification now')
       self.sendSocketNotification('EARTHQUAKE_REQUEST', self.config)
     }, nextLoad)
   },
@@ -67,7 +66,7 @@ Module.register('MMM-EarthquakeAlerts', {
   // Deal with received notification
   socketNotificationReceived(notification, payload) {
     if (notification === 'EARTHQUAKE_ALERT') {
-      //console.log('Earthquake message received!')
+      // console.log('Earthquake message received!')
       if (payload.quakeMessages.length > 0) {
         this.messageText = payload.quakeMessages.join('<br>')
       }
