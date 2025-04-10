@@ -8,7 +8,7 @@ The module is set up to show:
 - Quakes of at least 2.5 magnitude within 10 miles,
 - Quakes of at least 4.0 magnitude within 60 miles,
 - Quakes of at least 5.5 magnitude within 300 miles, and
-- Quakes of at least 7.0 worldwide
+- Quakes of at least 7.0 magnitude worldwide
 
 This should roughly equate to quakes that can be felt at the given location (plus major worldwide quakes).  I may allow customizing these values through config, but for now that seems to convoluted.
 
