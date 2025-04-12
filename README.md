@@ -47,7 +47,7 @@ To use this module, add it to the modules array in your `~/MagicMirror/config/co
       {latitude: 46.2, longitude: 6.13, name: 'mom'},
     ],
   }
-}
+},
 ````
 You should list your most important location first because the module looks through the locations in order and returns a result on the first distance/magnitude match.
 
