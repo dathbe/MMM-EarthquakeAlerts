@@ -38,7 +38,7 @@ module.exports = NodeHelper.create({
             closeTo = locNo
           }
         }
-        
+
         // If the earthquake is not at the first-listed (primary) location:
         if (config.units === 'metric') {
           var primaryDistance = `${Math.round(distances[0] / 1000)} km`
@@ -58,7 +58,7 @@ module.exports = NodeHelper.create({
           }
           var hoursAgo = Math.floor((new Date() - quakes[quakeNo]['properties']['time']) / 1000 / 60 / 60)
           quakeMessages.push(`${parseFloat(quakes[quakeNo]['properties']['mag']).toFixed(1)} earthquake ${primaryDistance} away (${messageDistance} from ${payload.locations[closeTo]['name']}) near ${quakes[quakeNo]['properties']['place'].split('of ')[quakes[quakeNo]['properties']['place'].split('of ').length - 1]} ${hoursAgo} hours ago`)
-          //quakeMessages.push(`${parseFloat(quakes[quakeNo]['properties']['mag']).toFixed(1)} earthquake ${messageDistance} from ${payload.locations[closeTo]['name']} near ${quakes[quakeNo]['properties']['place'].split('of ')[quakes[quakeNo]['properties']['place'].split('of ').length - 1]} ${hoursAgo} hours ago`)
+          // quakeMessages.push(`${parseFloat(quakes[quakeNo]['properties']['mag']).toFixed(1)} earthquake ${messageDistance} from ${payload.locations[closeTo]['name']} near ${quakes[quakeNo]['properties']['place'].split('of ')[quakes[quakeNo]['properties']['place'].split('of ').length - 1]} ${hoursAgo} hours ago`)
         }
       }
       // Send message
