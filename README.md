@@ -32,7 +32,7 @@ Dependencies:
 ```bash
 cd ~/MagicMirror/modules/MMM-EarthquakeAlerts
 git pull
-npm install
+npm install --omit=dev
 ```
 
 ## Usage
