@@ -20,7 +20,7 @@ Suggestions are welcome.
 cd ~/MagicMirror/modules
 git clone https://github.com/dathbe/MMM-EarthquakeAlerts
 cd ~/MagicMirror/modules/MMM-EarthquakeAlerts
-npm install --omit=dev
+npm ci --omit=dev
 ```
 
 Dependencies:
@@ -32,7 +32,7 @@ Dependencies:
 ```bash
 cd ~/MagicMirror/modules/MMM-EarthquakeAlerts
 git pull
-npm install --omit=dev
+npm ci --omit=dev
 ```
 
 ## Usage
