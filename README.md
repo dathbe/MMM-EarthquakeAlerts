@@ -20,15 +20,19 @@ Suggestions are welcome.
 cd ~/MagicMirror/modules
 git clone https://github.com/dathbe/MMM-EarthquakeAlerts
 cd ~/MagicMirror/modules/MMM-EarthquakeAlerts
-npm install
+npm ci --omit=dev
 ```
+
+Dependencies:
+* [geolib](https://www.npmjs.com/package/geolib)
+* [moment-timezone](https://www.npmjs.com/package/moment-timezone)
 
 ## Updating
 
 ```bash
 cd ~/MagicMirror/modules/MMM-EarthquakeAlerts
 git pull
-npm install
+npm ci --omit=dev
 ```
 
 ## Usage
@@ -72,6 +76,13 @@ Pull requests are of course also very welcome 🙂
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 ### Developer commands
+
+You will need to first install the dev dependencies:
+
+```bash
+cd ~/MagicMirror/modules/MMM-EarthquakeAlerts
+npm install
+```
 
 - `npm run lint` - Run linting checks.
 - `npm run lint:fix` - Fix automatically fixable linting errors.
