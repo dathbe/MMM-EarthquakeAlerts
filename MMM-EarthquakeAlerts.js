@@ -31,7 +31,7 @@ Module.register('MMM-EarthquakeAlerts', {
   // Define start sequence.
   start() {
     Log.info('Starting module: ' + this.name)
-    
+
     this.messageText = ''
 
     this.sendSocketNotification('EARTHQUAKE_REQUEST', this.config)
