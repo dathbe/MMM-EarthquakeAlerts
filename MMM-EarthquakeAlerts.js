@@ -30,6 +30,8 @@ Module.register('MMM-EarthquakeAlerts', {
 
   // Define start sequence.
   start() {
+    Log.info('Starting module: ' + this.name)
+    
     this.messageText = ''
 
     this.sendSocketNotification('EARTHQUAKE_REQUEST', this.config)
@@ -45,7 +47,7 @@ Module.register('MMM-EarthquakeAlerts', {
 
     var self = this
     setInterval(function () {
-      Log.info('Sending notification now')
+      Log.debug('[MMM-EarthquakeAlerts] Sending notification now')
       self.sendSocketNotification('EARTHQUAKE_REQUEST', self.config)
     }, nextLoad)
   },
@@ -66,7 +68,7 @@ Module.register('MMM-EarthquakeAlerts', {
   // Deal with received notification
   socketNotificationReceived(notification, payload) {
     if (notification === 'EARTHQUAKE_ALERT') {
-      Log.info('Earthquake message received!')
+      Log.debug('[MMM-EarthquakeAlerts] Earthquake message received!')
       if (payload.quakeMessages.length > 0) {
         this.messageText = payload.quakeMessages.join('<br>')
       }
