@@ -14,13 +14,16 @@ This should roughly equate to quakes that can be felt at the given location (plu
 
 Suggestions are welcome.
 
+[![Platform](https://img.shields.io/badge/platform-MagicMirror²-informational)](https://MagicMirror.builders)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE.md)
+
 ## Installation
 
 ```bash
 cd ~/MagicMirror/modules
 git clone https://github.com/dathbe/MMM-EarthquakeAlerts
 cd ~/MagicMirror/modules/MMM-EarthquakeAlerts
-npm ci --omit=dev
+npm install --omit=dev
 ```
 
 Dependencies:
@@ -32,7 +35,7 @@ Dependencies:
 ```bash
 cd ~/MagicMirror/modules/MMM-EarthquakeAlerts
 git pull
-npm ci --omit=dev
+npm install --omit=dev
 ```
 
 ## Usage
