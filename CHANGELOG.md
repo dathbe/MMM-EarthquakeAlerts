@@ -4,6 +4,12 @@ Notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [1.0.5](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.4...v1.0.5) - 2024-05-06
+
+- Tweak logging
+- Restore install instructions to avoid problems with non-standard OSes
+
 ## [1.0.4](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.3...v1.0.4) - 2024-04-24
 
 - Tweak install and update instructions to `npm ci` for more repeatability
