@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Tweak logging
 - Restore install instructions to avoid problems with non-standard OSes
+- Bump dev dependencies versions
 
 ## [1.0.4](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.3...v1.0.4) - 2024-04-24
 
