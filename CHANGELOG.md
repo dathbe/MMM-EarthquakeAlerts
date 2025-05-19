@@ -4,21 +4,25 @@ Notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.7](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.6...v1.0.7) - 2024-05-XX
+
+- Update devDependencies
+
 ## [1.0.6](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.5...v1.0.6) - 2024-05-14
 
-- Bump dev dependency version
+- Update devDependencies
 - Lint style changes
 
 ## [1.0.5](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.4...v1.0.5) - 2024-05-06
 
 - Tweak logging
 - Restore install instructions to avoid problems with non-standard OSes
-- Bump dev dependencies versions
+- Update devDependencies
 
 ## [1.0.4](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.3...v1.0.4) - 2024-04-24
 
 - Tweak install and update instructions to `npm ci` for more repeatability
-- Upgrade devDependencies
+- Update devDependencies
 
 ## [1.0.3](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.2...v1.0.3) - 2024-04-15
 
@@ -26,7 +30,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [1.0.2](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.1...v1.0.2) - 2024-04-09
 
-- Bump ESLint dependency versions
+- Update devDependencies
 - `package.json` formatting tweak
 
 ## [1.0.1](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.0...v1.0.1) - 2024-04-04
