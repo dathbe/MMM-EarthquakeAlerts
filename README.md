@@ -64,9 +64,9 @@ The following properties can be configured:
 
 | Option                | Description
 |-----------------------|------------
-|`locations`       |Technically *optional*, but not very useful without putting in at least one location you are interested in getting alerts on.<br>**Type:** `array` of `dict`s<br>**Default:** `[{ latitude: 39.1, longitude: -94.6, name: 'nowhere specific' }]`
-|`updateInterval`  |*Optional* The time between refreshes of quake information in seconds<br>**Type:** `int`<br>**Default:** `30 * 60` (30 minutes)
-|`animationSpeed`  |*Optional* The speed of animated transitions from one message to another in milliseconds<br>**Type:** `int`<br>**Default:** `2000` (2 seconds)
+|`locations`       |Technically *optional*, but not very useful without putting in at least one location you are interested in getting alerts on.<br><br>**Type:** `array` of `dict`s<br>**Default:** `[{ latitude: 39.1, longitude: -94.6, name: 'nowhere specific' }]`
+|`updateInterval`  |*Optional* The time between refreshes of quake information in seconds<br><br>**Type:** `int`<br>**Default:** `30 * 60` (30 minutes)
+|`animationSpeed`  |*Optional* The speed of animated transitions from one message to another in milliseconds<br><br>**Type:** `int`<br>**Default:** `2000` (2 seconds)
 
 ## Contributing
 

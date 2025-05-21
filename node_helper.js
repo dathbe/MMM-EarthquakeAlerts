@@ -13,6 +13,7 @@ module.exports = NodeHelper.create({
     try {
       const url = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=' + moment().subtract(1, 'day').format() + '&minmagnitude=' + payload.magnitude1
       const response = await fetch(url)
+      Log.debug(`[MMM-EarthquakeAlerts] ${url} fetched`)
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
