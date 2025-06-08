@@ -1,6 +1,7 @@
 {
   "name": "mmm-earthquakealerts",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "A MagicMirror² module to display alerts for earthquakes near a chosen location.",
   "repository": {
     "type": "git",
@@ -24,12 +25,12 @@
   "license": "MIT",
   "dependencies": {
     "geolib": "^3.3.4",
-    "moment-timezone": "^0.5.48"
+    "moment-timezone": "^0.6.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.27.0",
-    "@stylistic/eslint-plugin": "^4.2.0",
-    "eslint": "^9.27.0",
-    "globals": "^16.1.0"
+    "@eslint/js": "^9.28.0",
+    "@stylistic/eslint-plugin": "^4.4.1",
+    "eslint": "^9.28.0",
+    "globals": "^16.2.0"
   }
 }
