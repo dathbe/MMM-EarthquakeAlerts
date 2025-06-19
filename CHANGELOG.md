@@ -4,6 +4,12 @@ Notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.9](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.87...v1.0.9) - 2024-06-XX
+
+- Update Dependencies
+- Add dependabot checks
+- `npm run` to `node --run`
+
 ## [1.0.8](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.7...v1.0.8) - 2024-06-08
 
 - Update Dependencies
