@@ -47,7 +47,7 @@ module.exports = NodeHelper.create({
         else {
           primaryDistance = `${Math.round(distances[0] / 1609)} miles`
         }
-        if (closeTo === 0) {
+        if (closeTo == 0) {
           quakeMessages.push(`${parseFloat(quakes[quakeNo]['properties']['mag']).toFixed(1)} earthquake ${primaryDistance} away near ${quakes[quakeNo]['properties']['place'].split('of ')[quakes[quakeNo]['properties']['place'].split('of ').length - 1]} ${hoursAgo} hours ago`)
         }
         else if (closeTo > 0) {
@@ -63,6 +63,7 @@ module.exports = NodeHelper.create({
         }
       }
       // Send message
+      Log.debug(quakeMessages)
       this.sendSocketNotification('EARTHQUAKE_ALERT', {
         quakeMessages: quakeMessages,
       })
