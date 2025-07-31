@@ -47,6 +47,7 @@ module.exports = NodeHelper.create({
         else {
           primaryDistance = `${Math.round(distances[0] / 1609)} miles`
         }
+        var hoursAgo = Math.floor((new Date() - quakes[quakeNo]['properties']['time']) / 1000 / 60 / 60)
         if (closeTo == 0) {
           quakeMessages.push(`${parseFloat(quakes[quakeNo]['properties']['mag']).toFixed(1)} earthquake ${primaryDistance} away near ${quakes[quakeNo]['properties']['place'].split('of ')[quakes[quakeNo]['properties']['place'].split('of ').length - 1]} ${hoursAgo} hours ago`)
         }
@@ -57,7 +58,7 @@ module.exports = NodeHelper.create({
           else {
             messageDistance = `${Math.round(distances[closeTo] / 1609)} miles`
           }
-          var hoursAgo = Math.floor((new Date() - quakes[quakeNo]['properties']['time']) / 1000 / 60 / 60)
+          // var hoursAgo = Math.floor((new Date() - quakes[quakeNo]['properties']['time']) / 1000 / 60 / 60)
           quakeMessages.push(`${parseFloat(quakes[quakeNo]['properties']['mag']).toFixed(1)} earthquake ${primaryDistance} away (${messageDistance} from ${payload.locations[closeTo]['name']}) near ${quakes[quakeNo]['properties']['place'].split('of ')[quakes[quakeNo]['properties']['place'].split('of ').length - 1]} ${hoursAgo} hours ago`)
           // quakeMessages.push(`${parseFloat(quakes[quakeNo]['properties']['mag']).toFixed(1)} earthquake ${messageDistance} from ${payload.locations[closeTo]['name']} near ${quakes[quakeNo]['properties']['place'].split('of ')[quakes[quakeNo]['properties']['place'].split('of ').length - 1]} ${hoursAgo} hours ago`)
         }
