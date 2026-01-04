@@ -15,7 +15,7 @@
   ],
   "author": "dathbe",
   "contributors": [
-    "dathbe"
+    {"name": "dathbe"}
   ],
   "scripts": {
     "lint": "eslint",
