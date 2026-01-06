@@ -4,6 +4,10 @@ Notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.14](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.13...v1.0.14) - 2026-01-05
+
+- **BUG FIX**: Fix handling of "+" timezones
+
 ## [1.0.13](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.12...v1.0.13) - 2026-01-04
 
 - Update instructions for developers
