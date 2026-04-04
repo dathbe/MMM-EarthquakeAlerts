@@ -3,7 +3,7 @@ const NodeHelper = require('node_helper')
 const geolib = require('geolib')
 
 module.exports = NodeHelper.create({
-  requiresVersion: "2.34.0",
+  requiresVersion: '2.34.0',
 
   start: function () {
     Log.log('Starting node_helper for: ' + this.name)
@@ -12,7 +12,7 @@ module.exports = NodeHelper.create({
   async getData(payload) {
     // Fetch earthquake data for the last day (with at least magnitude1 magnitude)
     try {
-      const url = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=' + Temporal.Now.zonedDateTimeISO('America/New_York').subtract({ days: 1 }).toString({fractionalSecondDigits: 0, timeZoneName: "never"}) + '&minmagnitude=' + payload.magnitude1
+      const url = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=' + Temporal.Now.zonedDateTimeISO('America/New_York').subtract({ days: 1 }).toString({ fractionalSecondDigits: 0, timeZoneName: 'never' }) + '&minmagnitude=' + payload.magnitude1
       const response = await fetch(url)
       Log.debug(`[MMM-EarthquakeAlerts] ${url} fetched`)
       if (!response.ok) {
