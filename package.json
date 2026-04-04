@@ -24,13 +24,15 @@
   },
   "license": "MIT",
   "dependencies": {
-    "geolib": "^3.3.4",
-    "moment-timezone": "^0.6.0"
+    "geolib": "^3.3.14",
+    "moment-timezone": "^0.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@stylistic/eslint-plugin": "^5.9.0",
-    "eslint": "^10.0.1",
-    "globals": "^17.3.0"
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.2.0",
+    "globals": "^17.4.0",
+    "picomatch": "^4.0.4",
+    "flatted": "^3.4.2"
   }
 }
