@@ -6,7 +6,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [2.0.0](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.16...v2.0.0) - 2026-04-XX
 
-- Remove `moment-timezone` dependency (replace with built-in `Temporal`) **Possible breaking change.  Requires MagicMirror² v2.34.0 or higher.**
+- Remove `moment-timezone` dependency (replace with built-in `Temporal`) **Possible breaking change.**  Requires Node.js v22.21.1 or higher.
 
 ## [1.0.16](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.15...v1.0.16) - 2026-04-04
 
