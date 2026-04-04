@@ -4,6 +4,10 @@ Notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.16](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.15...v1.0.16) - 2026-04-04
+
+- Update dependencies
+
 ## [1.0.15](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.14...v1.0.15) - 2026-02-22
 
 - Update dependencies
