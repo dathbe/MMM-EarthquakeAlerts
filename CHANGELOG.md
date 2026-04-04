@@ -4,6 +4,15 @@ Notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.16...v2.0.0) - 2026-04-XX
+
+- Remove `moment-timezone` dependency (replace with built-in `Temporal`) **Possible breaking change.  Requires MagicMirror² v2.34.0 or higher.**
+
+## [1.0.16](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.15...v1.0.16) - 2026-04-04
+
+- Update dependencies
+- Temporarily add `picomatch` and `flatted` devdependencies to specify patched versions
+
 ## [1.0.16](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.15...v1.0.16) - 2026-04-04
 
 - Update dependencies
@@ -26,11 +35,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [1.0.12](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.11...v1.0.12) - 2024-07-31
 
-- BUG FIX: Fix missing time of quake in certain circumstances
+- **BUG FIX**: Fix missing time of quake in certain circumstances
 
 ## [1.0.11](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.10...v1.0.11) - 2024-07-29
 
-- BUG FIX: Fix `=== 0` logic error
+- **BUG FIX**: Fix `=== 0` logic error
 - Update dependencies
 
 ## [1.0.10](https://github.com/dathbe/MMM-EarthquakeAlerts/compare/v1.0.9...v1.0.10) - 2024-07-05
