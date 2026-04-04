@@ -2,7 +2,7 @@
 
 `MMM-EarthquakeAlerts` is a module for [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror). It posts alert messages to your MagicMirror regarding recent earthquakes based on USGS data.
 
-**Version 2.0.0 relies on the built-in `Temporal` API instead of the `moment-timezone` external dependency.  This requires Node.js v22.21.1 or higher.  This version of Node.js is already a requirement for MagicMirror² v2.34.0 and higher, so if you are already running the latest version of MagicMirror², the module should work without issue.  For that reason, v2.0.0 has set the minimum required MagicMirror² to v2.34.0.
+**Version 2.0.0 relies on the built-in `Temporal` API instead of the `moment-timezone` external dependency.  This requires Node.js v22.21.1 or higher.**  This version of Node.js is already a requirement for MagicMirror² v2.34.0 and higher, so if you are already running the latest version of MagicMirror², the module should work without issue.  For that reason, v2.0.0 has set the minimum required MagicMirror² to v2.34.0.
 
 ![Example Screenshot](screenshot.png)
 
