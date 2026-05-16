@@ -6,7 +6,6 @@
  */
 
 Module.register('MMM-EarthquakeAlerts', {
-
   // Default config.
   defaults: {
     locations: [
