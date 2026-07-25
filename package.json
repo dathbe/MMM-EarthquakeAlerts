@@ -32,6 +32,6 @@
     "eslint": "^10.4.0",
     "globals": "^17.6.0",
     "picomatch": "^4.0.4",
-    "flatted": "^3.4.2"
+    "flatted": "^3.4.3"
   }
 }
